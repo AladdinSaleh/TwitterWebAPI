@@ -1,0 +1,32 @@
+﻿<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">Twitter Feed</a></p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Top 5 Favorites</h1>
+                </hgroup>   
+                <b> <a href="~/Home/Index">>Top 5 Followers</a>  
+                 <a href="~/Home/TopRetweets">>Top 5 Retweets</a>  
+                <a href="~/Home/TopFavourited">>Top 5 Favorites</a>  
+          </b>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix"> 
+        <ol class="round">
+           @foreach (dynamic item in Model)
+           {
+                <li >
+                <h5>@item.User.Name (Followers: @item.User.FollowersCount)</h5>
+                 @item.Text <b>(@item.RetweetCount Retweets)(@item.FavoriteCount ♥)</b>
+            </li> 
+           } 
+        </ol>
+    </section>
+</div>
